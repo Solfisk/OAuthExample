@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OAuth Example</title>
+    </head>
+    <body>
+        <h1>OAuth2 example</h1>
+        <div id="Greeting">Hello <span id="userName">stranger</span></div>
+
+        <div class="logout"><button onclick="window.location='/api/oauth/logout?returnUrl=/loggedout.html'">Logout</button></div>
+        <script>
+            const elem = document.getElementById("userName");
+            fetch("/api/oauth/userinfo")
+            .then((response) => response.json())
+            .then((user) => { elem.innerHTML = user["userName"] });
+        </script>
+    </body>
+</html>

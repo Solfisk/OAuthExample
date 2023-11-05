@@ -1,0 +1,12 @@
+# directories
+**/bin/
+**/obj/
+**/out/
+cert/
+**/node_modules/
+**/.vscode/
+
+# files
+Dockerfile*
+**/*.md
+.env

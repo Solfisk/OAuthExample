@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  oauthExample:
+    build:
+      context: .
+    image: 'oauthexample'
+    ports:
+      - 7074:7074
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:7074
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=ez2guess
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/cert/localhost.pfx
+    env_file: ./.env 
+    volumes:
+      - ./cert:/cert:ro
